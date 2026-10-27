@@ -29,3 +29,16 @@ Validated on 27 October 2026.
 The scorer is deterministic over a supplied ledger. It does not authenticate
 evidence or perform factual verification. The live example and synthetic tests
 are deliberately labeled separately.
+
+
+## 1.1.0 local validation (28 October 2026)
+
+- Existing credibility test suite: 19 passed.
+- Codex package and three portable deliverables built successfully.
+- ZIP integrity, repeated-build hashes, Claude skill/source parity, and new guide
+  links checked locally.
+- Gemini CLI manifest version and both Gemini instruction copies agree.
+- No Claude or Gemini live installation or video-research run performed.
+- Viewer feedback guidance reviewed for inaccessible comments, small samples,
+  mixed outcomes, generic praise, and unverified corrections. These are instruction
+  reviews, not live platform behavioral tests.

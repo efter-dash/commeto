@@ -18,6 +18,10 @@ in factual truth.
 **Scope:** full/partial/no transcript, sections inspected, whether audiovisual
 material was inspected, and date of this review.
 
+**Viewer value:** strong / mixed / limited / unknown; comment themes, actual sample
+count and ordering, review date, source links, and sample limitations. Separate from
+the credibility score.
+
 **Checks:** brief claim, result, source link, and caveat when needed.
 **Moments:** verified `MM:SS` or `HH:MM:SS` timestamps with short takeaways.
 Omit this section when none are verified.

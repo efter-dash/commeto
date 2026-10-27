@@ -149,6 +149,18 @@ class EvidenceTests(unittest.TestCase):
         data["candidates"][0]["claims"][0]["status"] = "unresolved"
         self.assertEqual(len(ev.evaluate(data)["provisional"]), 1)
 
+    def test_duplicate_claim_cannot_fill_minimum(self):
+        data = fixture()
+        data["candidates"][0]["claims"][1]["text"] = "  SYNTHETIC claim 0. "
+        with self.assertRaisesRegex(ValueError, "duplicate claim"):
+            ev.evaluate(data)
+
+    def test_contradiction_does_not_display_positive_public_score(self):
+        data = fixture()
+        data["candidates"][0]["claims"][0]["status"] = "contradicted"
+        report = ev.evaluate(data)
+        self.assertIsNone(report["excluded"][0]["assessment"]["rubric_score"])
+
     def test_evaluation_does_not_mutate_evidence(self):
         data = fixture()
         before = copy.deepcopy(data)

@@ -100,9 +100,13 @@ def validate_candidate(c):
             text(v.get("reason"), f"{key}.reason")
             refs(v.get("source_ids"), sources, f"{key}.source_ids", rating is not None)
     require(isinstance(c.get("claims"), list), "claims: list required")
+    claim_texts = set()
     for claim in c["claims"]:
         require(isinstance(claim, dict), "claim must be an object")
         text(claim.get("text"), "claim.text")
+        normalized = " ".join(claim["text"].casefold().split()).rstrip(".!?")
+        require(normalized not in claim_texts, "duplicate claim text")
+        claim_texts.add(normalized)
         require(claim.get("status") in ("supported", "contradicted", "unresolved"),
                 "invalid claim status")
         settled = claim["status"] != "unresolved"
@@ -181,7 +185,7 @@ def assess(c, config):
     else:
         decision, reasons = "vetted", ["passes recorded evidence and rubric gates within the stated scope"]
     return {**copy.deepcopy(c), "assessment": {
-        "decision": decision, "rubric_score": round(conservative, 4) if not missing else None,
+        "decision": decision, "rubric_score": round(conservative, 4) if not missing and not hard else None,
         "conservative_score": round(conservative, 4), "coverage": round(coverage, 4),
         "tiers": tier_results, "reasons": reasons}}
 

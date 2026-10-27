@@ -1,4 +1,4 @@
 interface:
   display_name: "Commeto video research"
-  short_description: "Find videos with traceable evidence and caveats"
+  short_description: "Find useful videos with viewer feedback and sources"
   default_prompt: "Use $video-research to find three trustworthy educational videos and explain the evidence."

@@ -2,115 +2,87 @@
 
 # Commeto
 
-**Find videos worth your time.**
+**Find videos worth your time. Learn something you can use.**
 
-Commeto is a ChatGPT and Codex plugin by **biskootmonster** for researching
-educational videos. It helps you find credible explanations, review a video
-someone sent you, and arrange useful videos into a learning sequence.
+Commeto helps you choose useful videos on any learning topic—from furniture
+making and cooking to coding, languages, photography, and career skills.
+Tell it what you want to learn, or share a video you want checked.
 
-Each assessment explains the evidence, the learner fit, and what remains unknown.
-Verified timestamps help you get to the useful parts. A rubric score describes
-the recorded assessment; it is not a guarantee that every statement is correct.
+It looks for clear teaching, practical takeaways, and **what viewers say they
+actually learned or achieved**. When possible, it also checks the video's
+explanations against reliable sources.
 
-## Try these prompts
+## What can I ask?
 
-- “Use Commeto to find three videos about binary search for someone who knows basic Python.”
-- “Use Commeto to review this video. Check its main claims and explain any evidence gaps: [link].”
-- “Use Commeto to build a beginner learning sequence for statistics. Prefer Bangla videos; English is okay if needed.”
-- “Find current React tutorials under 30 minutes. Exclude Shorts. Only recommend videos with accessible transcripts.”
-- “Compare these two lectures and give me the evidence ledger as JSON: [links].”
+- “Use Commeto to find three furniture-making videos for a complete beginner.”
+- “Find cooking tutorials where viewers say the recipe worked for them.”
+- “Help me learn photography. Give me three videos in a sensible order.”
+- “Find beginner Excel lessons in Bangla, under 20 minutes each.”
+- “Is this video useful? Check the explanation and viewer feedback: [video link].”
 
-## Install in Codex
+You can specify your experience, preferred language, available tools, and time.
 
-With a current Codex CLI that supports plugins:
+## How does it choose videos?
+
+Commeto looks at two different things:
+
+- **Viewer value:** Do comments describe successful results, better understanding,
+  useful tips, missing steps, or problems? Specific experiences carry more weight
+  than generic praise, likes, or repeated promotional messages.
+- **Trustworthiness:** Does the explanation hold up when checked? Is there enough
+  information to understand its limits and who it is suitable for?
+
+Comments help reveal usefulness; they do not prove that advice is correct.
+Commeto tells you when comments are unavailable, too few, or only partly checked.
+It never invents comments or treats a popular video as automatically trustworthy.
+
+You get video links, why each one fits, useful viewer feedback when accessible,
+and any important gaps. Timestamps appear only when verified.
+
+## Choose your app
+
+| Where you want to use Commeto | How to start |
+|---|---|
+| **Codex** | Follow the installation steps below. |
+| **Claude** | Download the Claude skill ZIP, then upload it under Customize → Skills. [Claude guide](docs/CLAUDE.md) |
+| **Gemini** | Copy the [Commeto instructions](platforms/gemini/INSTRUCTIONS.md) into a Gem. [Gemini guide](docs/GEMINI.md) |
+| **Gemini CLI** | Install the extension from this repository. [CLI steps](docs/GEMINI.md#gemini-cli) |
+
+Downloadable packages are on [GitHub Releases](https://github.com/efter-dash/commeto/releases).
+Use the files attached to the release, rather than GitHub's “Source code” ZIP.
+If the new packages are not published yet, the guides explain how to use the source files.
+
+### Install in Codex
+
+In a Codex version that supports plugins, run:
 
 ```sh
 codex plugin marketplace add efter-dash/commeto
 codex plugin add commeto@commeto
 ```
 
-Start a new chat or refresh plugin discovery, then enable Commeto if prompted.
-Ask “Use Commeto to…”; the packaged skill is `video-research`.
+Start a new chat and ask: **“Use Commeto to find three videos about…”**
+In compatible desktop apps, you can also add this repository through the plugin
+marketplace controls. Your workspace may require administrator approval.
 
-In compatible desktop clients, use the Plugins Directory's marketplace controls
-to add this GitHub repository and install Commeto. Managed workspaces may require
-an administrator to import the repository.
+### Use in Claude or Gemini
 
-For a local checkout:
+The [Claude guide](docs/CLAUDE.md) and [Gemini guide](docs/GEMINI.md) explain setup
+step by step. These versions provide Commeto's research instructions; they do
+not add a separate search or comments service to your app.
 
-```sh
-codex plugin marketplace add /absolute/path/to/commeto
-codex plugin add commeto@commeto
-```
+## A few things to know
 
-## ChatGPT public directory
+- Commeto uses the search and reading tools available in your AI app.
+- Some videos, transcripts, and comments cannot be accessed. Results will say so.
+- It can suggest promising videos without calling them fully checked.
+- It does not download videos, unlock paid content, or guarantee every claim.
+- No separate Commeto account is needed. Your AI app's usual limits still apply.
+- A GitHub download does not mean an app directory has approved Commeto.
+  See [publication status](PUBLICATION.md).
 
-The downloadable plugin ZIP is packaged for OpenAI's public submission flow.
-A GitHub release does **not** mean OpenAI has approved or listed it. See
-[publication status](PUBLICATION.md) for the actual state.
+Made by **biskootmonster**. Have an idea or found a problem?
+[Open an issue](https://github.com/efter-dash/commeto/issues).
 
-Download the plugin ZIP from [Releases](https://github.com/efter-dash/commeto/releases).
-It contains `plugin.json`, the skill, icons, references, and the optional helper.
-Use the full source archive if you want the tests, examples, and build tools.
-
-## What it can check
-
-| Area | What Commeto examines |
-|---|---|
-| Integrity | Title alignment, accessible presentation, and evidenced promotion |
-| Authority | Relevant expertise, source transparency, independent corroboration |
-| Rigor | Selected factual claims, their context and limits, and topic currency |
-| Learning value | Audience fit, explanatory structure, useful learning support |
-
-Unknown evidence remains unknown. Commeto never quietly lowers your minimum
-score. It separates provisional leads from vetted recommendations and can return
-fewer results than requested.
-
-## Requirements and limitations
-
-- Live discovery needs web search and page-reading tools in the host.
-- Access to transcripts, videos, and captions depends on the source and host.
-  Commeto does not unlock private or restricted content.
-- This release is a **skills-only plugin**. It has no hosted backend, separate
-  Commeto account, bundled search API, or automatic transcription service.
-- Python 3.10+ is needed only for the optional offline scoring helper. The
-  research workflow also works without executing Python.
-- Private analytics, audience retention, missing dislikes, and full-video
-  audiovisual quality are never inferred from metadata.
-- No view-count or credential shortcut determines truth.
-- Host subscription, usage limits, and connected-service terms still apply.
-
-## Reproducible evidence reports
-
-The helper validates a reviewer-prepared evidence ledger and computes the rubric.
-It does not perform search or decide whether a source is truthful.
-
-```sh
-python3 plugins/commeto/skills/video-research/scripts/evaluate.py \
-  --template --output my-ledger.json
-
-# Fill the ledger using material you actually inspected, then:
-python3 plugins/commeto/skills/video-research/scripts/evaluate.py \
-  my-ledger.json --output my-report.json
-```
-
-See the [rubric](plugins/commeto/skills/video-research/references/rubric.md),
-[evidence format](plugins/commeto/skills/video-research/references/evidence-format.md),
-and [examples](examples/README.md).
-
-## Development
-
-```sh
-python3 -m unittest discover -s tests -v
-python3 tools/build_release.py
-```
-
-The build checks package metadata and resources, then creates a reproducible ZIP
-and SHA-256 checksum in `dist/`. No runtime dependencies are required.
-
-Report reproducible problems or suggest improvements in
-[GitHub Issues](https://github.com/efter-dash/commeto/issues).
-Please do not post private transcripts, credentials, or personal information.
-
-[Privacy](PRIVACY.md) · [Terms](TERMS.md) · [License](LICENSE) ·
-[Design decisions](docs/DESIGN.md)
+[Technical guide](docs/DEVELOPMENT.md) · [Privacy](PRIVACY.md) ·
+[Terms](TERMS.md) · [License](LICENSE)

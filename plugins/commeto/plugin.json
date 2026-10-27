@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "commeto",
-  "version": "1.0.0",
-  "description": "Find and assess educational videos with source checks, transcript evidence, and clear uncertainty.",
+  "version": "1.1.0",
+  "description": "Find useful videos on any learning topic with viewer feedback, source checks, and clear uncertainty.",
   "author": {
     "name": "biskootmonster",
     "url": "https://github.com/efter-dash"
@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "Commeto",
         "shortDescription": "Find videos worth your time",
-        "longDescription": "Find educational videos, assess a supplied video, or build a learning sequence. Commeto examines available transcripts and publisher information, checks selected claims against authoritative sources, and explains why each recommendation fits your needs. Recommendations distinguish vetted findings from provisional leads and show evidence gaps. Timestamps are included only when verified. Supports language, audience, platform, and length preferences. Requires the host's web research tools for live discovery. Transcript and video access vary by source; Commeto does not guarantee access, inspect private analytics, or certify factual accuracy. An optional offline Python helper makes rubric calculations reproducible. No Commeto account is required.",
+        "longDescription": "Find useful videos on any learning topic, assess a supplied video, or build a learning sequence. When accessible, viewer comments reveal learning outcomes, successful attempts, and missing steps; viewer value is assessed separately from factual trustworthiness. Commeto examines available transcripts and publisher information, checks selected claims against authoritative sources, and explains why each recommendation fits your needs. Recommendations distinguish vetted findings from provisional leads and show evidence gaps. Timestamps are included only when verified. Supports language, audience, platform, and length preferences. Requires the host's web research tools for live discovery. Transcript and video access vary by source; Commeto does not guarantee access, inspect private analytics, or certify factual accuracy. An optional offline Python helper makes rubric calculations reproducible. No Commeto account is required.",
         "developerName": "biskootmonster",
         "category": "Productivity",
         "capabilities": [

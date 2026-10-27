@@ -3,11 +3,13 @@
 This document distinguishes distribution from OpenAI directory approval.
 
 - Package: Commeto 1.0.0, skills-only, publisher biskootmonster.
-- GitHub distribution: preparation in progress.
+- GitHub distribution: public at https://github.com/efter-dash/commeto.
+- Public marketplace installation: verified with the Codex CLI on 27 October 2026.
+- Automated validation: 19 tests passed locally and in GitHub Actions on Python
+  3.10 and 3.14.
 - OpenAI public directory: not submitted or approved.
-- Publishing session: sign-in required in the OpenAI developer dashboard.
-- Verified developer identity: not yet checked. The directory publisher label is
-  controlled by the developer identity selected in that dashboard.
+- GitHub distribution and marketplace installation are independent of public
+  directory review. A downloadable release is not an OpenAI approval.
 
 ## Submission procedure
 

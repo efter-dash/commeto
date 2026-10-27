@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "commeto",
+  "version": "1.0.0",
+  "description": "Find and assess educational videos with source checks, transcript evidence, and clear uncertainty.",
+  "author": {
+    "name": "biskootmonster",
+    "url": "https://github.com/efter-dash"
+  },
+  "homepage": "https://github.com/efter-dash/commeto",
+  "repository": "https://github.com/efter-dash/commeto",
+  "license": "MIT",
+  "keywords": [
+    "video-research",
+    "learning",
+    "source-checking",
+    "education"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Commeto",
+        "shortDescription": "Find videos worth your time",
+        "longDescription": "Find educational videos, assess a supplied video, or build a learning sequence. Commeto examines available transcripts and publisher information, checks selected claims against authoritative sources, and explains why each recommendation fits your needs. Recommendations distinguish vetted findings from provisional leads and show evidence gaps. Timestamps are included only when verified. Supports language, audience, platform, and length preferences. Requires the host's web research tools for live discovery. Transcript and video access vary by source; Commeto does not guarantee access, inspect private analytics, or certify factual accuracy. An optional offline Python helper makes rubric calculations reproducible. No Commeto account is required.",
+        "developerName": "biskootmonster",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://github.com/efter-dash/commeto",
+        "supportURL": "https://github.com/efter-dash/commeto/issues",
+        "privacyPolicyURL": "https://github.com/efter-dash/commeto/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/efter-dash/commeto/blob/main/TERMS.md",
+        "defaultPrompt": [
+          "Find three reliable videos explaining distributed consensus for intermediate programmers.",
+          "Review this educational video and explain what can and cannot be verified.",
+          "Build a beginner video learning sequence for statistics, with prerequisites and checked sources."
+        ],
+        "brandColor": "#145E53",
+        "brandColorDark": "#6FE7CE",
+        "composerIcon": "./assets/icon.svg",
+        "composerIconDark": "./assets/icon-dark.svg",
+        "logo": "./assets/icon.svg",
+        "logoDark": "./assets/icon-dark.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "query": "Replace with the user's video research question",
+  "config": {
+    "min_credibility_score": 0.75,
+    "require_transcripts": true,
+    "max_results": 5
+  },
+  "candidates": [
+    {
+      "id": "candidate-1",
+      "url": "https://example.org/video",
+      "title": "Replace with verified title",
+      "creator": "Replace with verified creator",
+      "duration_seconds": null,
+      "published_at": null,
+      "language": null,
+      "scope": "Nothing inspected yet",
+      "transcript": "none",
+      "content_inspected": false,
+      "filters_status": "unknown",
+      "sources": [],
+      "tiers": {
+        "integrity": {
+          "title_alignment": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "presentation_accessibility": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "promotional_balance": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        },
+        "authority": {
+          "relevant_expertise": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "source_transparency": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "independent_corroboration": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        },
+        "rigor": {
+          "claim_support": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "context_and_limits": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "currency": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        },
+        "utility": {
+          "audience_fit": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "explanatory_structure": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "learning_support": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        }
+      },
+      "claims": [],
+      "single_core_claim": false,
+      "critical_issues": [],
+      "moments": [],
+      "caveats": [
+        "Template only; not a real recommendation"
+      ]
+    }
+  ]
+}

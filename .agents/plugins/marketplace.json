@@ -1,0 +1,20 @@
+{
+  "name": "commeto",
+  "interface": {
+    "displayName": "Commeto by biskootmonster"
+  },
+  "plugins": [
+    {
+      "name": "commeto",
+      "source": {
+        "source": "local",
+        "path": "./plugins/commeto"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

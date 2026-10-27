@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0.0",
+  "query": "Audit the binary-search portion of MIT Lecture 12 for a Python learner.",
+  "assessed_at": "2026-10-27T17:35:16.543252+00:00",
+  "config": {
+    "min_credibility_score": 0.75,
+    "require_transcripts": true,
+    "max_results": 1
+  },
+  "results": [],
+  "provisional": [
+    {
+      "id": "mit-lecture-12",
+      "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-12-searching-and-sorting/",
+      "title": "Lecture 12: Searching and Sorting",
+      "creator": "Prof. Eric Grimson / MIT OpenCourseWare",
+      "duration_seconds": null,
+      "published_at": null,
+      "language": "English",
+      "scope": "Publisher metadata, caption introduction, and binary-search passages around 03:26 and 05:30–08:08 inspected. Audio, visuals, and other algorithms not audited.",
+      "transcript": "full",
+      "content_inspected": true,
+      "filters_status": "pass",
+      "sources": [
+        {
+          "id": "mit",
+          "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-12-searching-and-sorting/",
+          "label": "MIT course video page",
+          "accessed_at": "2026-10-27",
+          "kind": "publisher"
+        },
+        {
+          "id": "captions",
+          "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/42d52f1c18495cef94a343364b38c7aa_6LOwPhPDwVc.vtt",
+          "label": "Publisher-provided timed captions",
+          "accessed_at": "2026-10-27",
+          "kind": "transcript"
+        },
+        {
+          "id": "cornell",
+          "url": "https://courses.cs.cornell.edu/cs2112/2022fa/lectures/complexity/index.html",
+          "label": "Cornell asymptotic complexity notes",
+          "accessed_at": "2026-10-27",
+          "kind": "verification"
+        }
+      ],
+      "tiers": {
+        "integrity": {
+          "title_alignment": {
+            "rating": 0.75,
+            "reason": "Inspected search material fits the title.",
+            "source_ids": [
+              "mit",
+              "captions"
+            ]
+          },
+          "presentation_accessibility": {
+            "rating": 0.75,
+            "reason": "Timed English text is readable; audiovisual accessibility unexamined.",
+            "source_ids": [
+              "captions"
+            ]
+          },
+          "promotional_balance": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        },
+        "authority": {
+          "relevant_expertise": {
+            "rating": 0.75,
+            "reason": "Publisher identifies its instructor.",
+            "source_ids": [
+              "mit"
+            ]
+          },
+          "source_transparency": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "independent_corroboration": {
+            "rating": 0.75,
+            "reason": "Two sampled algorithm claims match Cornell.",
+            "source_ids": [
+              "cornell"
+            ]
+          }
+        },
+        "rigor": {
+          "claim_support": {
+            "rating": 0.5,
+            "reason": "Two supported checks; caption wording unresolved.",
+            "source_ids": [
+              "captions",
+              "cornell"
+            ]
+          },
+          "context_and_limits": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          },
+          "currency": {
+            "rating": 0.75,
+            "reason": "Foundational algorithm matches the reference.",
+            "source_ids": [
+              "cornell"
+            ]
+          }
+        },
+        "utility": {
+          "audience_fit": {
+            "rating": 0.75,
+            "reason": "Assumes prior programming and complexity lessons.",
+            "source_ids": [
+              "captions"
+            ]
+          },
+          "explanatory_structure": {
+            "rating": 0.75,
+            "reason": "Recap proceeds from midpoint choice to step count.",
+            "source_ids": [
+              "captions"
+            ]
+          },
+          "learning_support": {
+            "rating": null,
+            "reason": "Not examined",
+            "source_ids": []
+          }
+        }
+      },
+      "claims": [
+        {
+          "text": "Binary search assumes sorted input.",
+          "status": "supported",
+          "source_ids": [
+            "cornell"
+          ],
+          "verification_note": "Cornell's example explicitly requires an ascending array."
+        },
+        {
+          "text": "The interval-based implementation has logarithmic worst-case time.",
+          "status": "supported",
+          "source_ids": [
+            "cornell"
+          ],
+          "verification_note": "Cornell derives the halving recurrence for index bounds."
+        },
+        {
+          "text": "The caption's terminology at 07:31 accurately reflects the spoken explanation.",
+          "status": "unresolved",
+          "source_ids": [
+            "captions"
+          ]
+        }
+      ],
+      "single_core_claim": false,
+      "critical_issues": [],
+      "moments": [
+        {
+          "seconds": 330,
+          "takeaway": "Bisection recap starts.",
+          "source_id": "captions"
+        },
+        {
+          "seconds": 437,
+          "takeaway": "Logarithmic step-count explanation.",
+          "source_id": "captions"
+        }
+      ],
+      "caveats": [
+        "At 07:31 captions say 'log linear'; at 08:03 they say 'log time'. Audio was not checked to resolve this.",
+        "Full-video duration and upload date remain unknown; course term is Fall 2016.",
+        "This is a limited manual research smoke test, not an independent model evaluation."
+      ],
+      "assessment": {
+        "decision": "provisional",
+        "rubric_score": null,
+        "conservative_score": 0.475,
+        "coverage": 0.6667,
+        "tiers": {
+          "integrity": {
+            "score": 0.75,
+            "coverage": 0.6667
+          },
+          "authority": {
+            "score": 0.75,
+            "coverage": 0.6667
+          },
+          "rigor": {
+            "score": 0.625,
+            "coverage": 0.6667
+          },
+          "utility": {
+            "score": 0.75,
+            "coverage": 0.6667
+          }
+        },
+        "reasons": [
+          "weighted evidence coverage below 0.75",
+          "unresolved sampled core claims",
+          "below the user's minimum rubric score"
+        ]
+      }
+    }
+  ],
+  "excluded": [],
+  "additional_qualified": [],
+  "summary": {
+    "requested": 1,
+    "qualified": 0,
+    "returned": 0,
+    "shortfall": 1
+  }
+}

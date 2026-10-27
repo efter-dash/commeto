@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Commeto">
+<rect width="512" height="512" rx="112" fill="#F6F4EC"/>
+<path d="M350 140a150 150 0 1 0 0 232" fill="none" stroke="#145E53" stroke-width="48" stroke-linecap="round"/>
+<path d="M231 184Q222 179 222 192V320Q222 333 233 326L338 264Q350 256 338 248Z" fill="#D95D39"/>
+<circle cx="371" cy="117" r="20" fill="#D95D39"/>
+</svg>
